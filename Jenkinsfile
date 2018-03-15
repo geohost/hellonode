@@ -29,7 +29,7 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-geohost') {
-            app.push("${Tag}")
+            app.push("${env.Tag}")
             app.push("latest")
         }
     }
